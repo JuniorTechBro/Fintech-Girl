@@ -1,0 +1,49 @@
+//Breakpoints 
+// @media (max-width :64em ){
+// }
+
+
+
+
+//CTA breakpoints
+
+@media (max-width:64em) {
+
+.cta {
+
+&__container1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+text-align: center;}
+}
+
+
+}
+
+
+
+// 500px, 1024px, 1400px
+$breakpoints-up: (
+"medium": "37.5em", 
+"large": "64em", 
+"xlarge": "87.5em");
+
+// 500px, 1024px, 1400px
+$breakpoints-down: (
+  "small": "37.5em",
+  "medium": "64em",
+  "xlarge": "87.5em"
+);
+
+@mixin breakpoint-down ($size) {
+@media(max-width: map-get($breakpoints-down, $size)){
+  @content;
+}
+}
+
+@mixin breakpoint-up ($size) {
+@media(min-width: map-get($breakpoints-up, $size)){
+@content;
+}
+}
